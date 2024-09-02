@@ -6,6 +6,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class CategoryDetails extends StatefulWidget {
   final ProductModel ds;
+
   const CategoryDetails({super.key, required this.ds});
 
   @override
@@ -20,15 +21,30 @@ class _CategoryDetailsState extends State<CategoryDetails> {
       appBar: AppBar(
         backgroundColor: Colors.green,
         automaticallyImplyLeading: false,
-        leading: IconButton(onPressed:(){
-          Navigator.pop(context);
-        }, icon: const Icon(Icons.arrow_back,color: Colors.white,)),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+        ),
+        title: Center(
+          child: Text(firstLetterCapital(input: widget.ds.category ?? ""),
+              style: const TextStyle(
+                fontStyle: FontStyle.normal,
+                color: Colors.white,
+                fontSize: 24,
+              )),
+        ),
+
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         children: [
           SizedBox(
-            width: fullWidth(context)/10,
+            width: fullWidth(context) / 10,
             height: fullHeight(context) / 2.5,
             child: Padding(
               padding: const EdgeInsets.all(15),

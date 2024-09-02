@@ -25,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     Future.delayed(Duration.zero, () async {
       await context.read<ProductProvider>().fetchProducts();
+      await context.read<ProductProvider>().fetchCategory();
       await context.read<ProductProvider>().fetchSliderImage();
       _startAutoSlide();
     });
@@ -160,12 +161,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               Flexible(
                                 child: ListView.builder(
                                   scrollDirection: Axis.horizontal,
-                                  itemCount: productProvider.products.length < 5
-                                      ? productProvider.products.length
-                                      : 5,
+                                  itemCount: productProvider.categoryProducts.length < 5
+                                      ? productProvider.categoryProducts.length
+                                      : 4,
                                   itemBuilder: (context, index) {
-                                    ProductModel? ds = productProvider.products.isNotEmpty
-                                        ? productProvider.products[index]
+                                    ProductModel? ds = productProvider.categoryProducts.isNotEmpty
+                                        ? productProvider.categoryProducts[index]
                                         : null;
 
                                     if (ds == null) {

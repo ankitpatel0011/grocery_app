@@ -11,7 +11,10 @@ class ProductProvider extends ChangeNotifier {
   bool _isLoading = false;
   List<int> _cartCounts = [];
   int index = 0;
+  final List<ProductModel> _categoryProducts = [];
+  final List<ProductModel> _filteredProductsByCategory = [];
 
+  List get categoryProducts=> _categoryProducts;
   List get products => _products;
 
   List get category => _category;
@@ -51,8 +54,30 @@ class ProductProvider extends ChangeNotifier {
         _category = List.from(onValue.map((e) => e).toList());
       }
     });
-
+    addCategoryProducts();
     setLoading = false;
+    notifyListeners();
+  }
+
+  addCategoryProducts() {
+    for (var category in category) {
+      for (var product in products) {
+        if (product.category.toString() == category.toString()) {
+          _categoryProducts.add(product);
+          break;
+        }
+      }
+    }
+    notifyListeners();
+  }
+
+  filterProductsCategory(String category) {
+    _filteredProductsByCategory.clear();
+    for (var product in products) {
+      if (product.category.toString() == category.toString()) {
+        _filteredProductsByCategory.add(product);
+      }
+    }
     notifyListeners();
   }
 

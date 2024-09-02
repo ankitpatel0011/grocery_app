@@ -64,9 +64,9 @@ class _AllCategoryScreenState extends State<AllCategoryScreen> {
               mainAxisSpacing: 0.3,
               childAspectRatio: 0.85,
             ),
-            itemCount: productProvider.products.length,
+            itemCount: productProvider.categoryProducts.length,
             itemBuilder: (BuildContext context, int index) {
-              ProductModel ds = productProvider.products[index];
+              ProductModel ds = productProvider.categoryProducts[index];
               return InkWell(
                 onTap: () {
                   Navigator.push(
