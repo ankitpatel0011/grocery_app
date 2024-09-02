@@ -2,9 +2,7 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery/controller/provider/provider.dart';
-import 'package:grocery/model/product_model.dart';
 import 'package:grocery/view/screens/all_category.dart';
-import 'package:grocery/view/screens/category_details.dart';
 import 'package:grocery/view/screens/categorywise_data.dart';
 import 'package:grocery/view/screens/home_screen.dart';
 import 'package:provider/provider.dart';
