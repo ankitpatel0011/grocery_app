@@ -29,8 +29,7 @@ class _MainLayoutState extends State<MainLayout> {
     const HomeScreen(),
     const CategoryWiseScreen(),
     const AllCategoryScreen(),
-    const Center(child: Text("More Screen")
-    ),
+    const Center(child: Text("More Screen")),
   ];
 
   @override
