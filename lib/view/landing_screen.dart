@@ -29,13 +29,10 @@ class _MainLayoutState extends State<MainLayout> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
-    // CategoryDetails(ds: ProductModel()),
-    Container(
-      child: Center(child: Text("Order Screen")
-      ),
-    ),
+    const CategoryWiseScreen(),
     const AllCategoryScreen(),
-    const CategoryWiseScreen()
+    const Center(child: Text("More Screen")
+    ),
   ];
 
   @override
