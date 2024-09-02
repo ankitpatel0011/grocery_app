@@ -312,13 +312,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               Flexible(
                                 child: ListView.builder(
                                   scrollDirection: Axis.horizontal,
-                                  itemCount: productProvider.products.length < 5
-                                      ? productProvider.products.length
-                                      : 5,
+                                  itemCount: productProvider.categoryProducts.length < 5
+                                      ? productProvider.categoryProducts.length
+                                      : 4,
                                   itemBuilder: (context, index) {
                                     ProductModel? ds =
-                                        productProvider.products.isNotEmpty
-                                            ? productProvider.products[index]
+                                        productProvider.categoryProducts.isNotEmpty
+                                            ? productProvider.categoryProducts[index]
                                             : null;
 
                                     if (ds == null) {
