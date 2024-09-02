@@ -87,8 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: TextField(
                      readOnly: true,
                       decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.only(
-                            top: 15,
+                          contentPadding:  EdgeInsets.only(
+                            top:screenHeight/55,
                           ),
                           border: InputBorder.none,
                           prefixIcon: const Icon(
@@ -229,11 +229,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 25,
+                       SizedBox(
+                        height: screenHeight / 45,
                       ),
                       Container(
-                        height: screenHeight / 4, // Adjusted height
+                         height: screenHeight / 4,
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -259,7 +259,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           image: DecorationImage(
                                             image: NetworkImage(productProvider
                                                 .sliderImages[index]),
-                                            fit: BoxFit.cover,
+                                            fit: BoxFit.fill,
                                           ),
                                         ),
                                       ),

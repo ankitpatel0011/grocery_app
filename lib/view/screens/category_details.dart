@@ -30,14 +30,13 @@ class _CategoryDetailsState extends State<CategoryDetails> {
             color: Colors.white,
           ),
         ),
-        title: Center(
-          child: Text(firstLetterCapital(input: widget.ds.category ?? ""),
-              style: const TextStyle(
-                fontStyle: FontStyle.normal,
-                color: Colors.white,
-                fontSize: 24,
-              )),
-        ),
+        centerTitle: true,
+        title: Text(firstLetterCapital(input: widget.ds.category ?? ""),
+            style: const TextStyle(
+              fontStyle: FontStyle.normal,
+              color: Colors.white,
+              fontSize: 24,
+            )),
 
       ),
       body: ListView(
